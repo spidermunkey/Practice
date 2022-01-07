@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRILL SZN</title>
+    <link rel="stylesheet" href="stopwatch.css">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"> -->
+</head>
+<body>
+    <!-- 
+
+        TODO
+
+            FUNCTIONALITY
+
+                [90Minute MAX]
+
+                CONTROLS {
+                    START 
+                        STOP 
+                            RESET 
+                                SET 
+                }
+                
+                UI {
+                    SHOW
+                        HIDE
+                            MINIMIZE
+                                CHANGE THEME
+                }
+                            STYLE THEMES 
+                UX {
+                    SAVE TIMER SETTINGS
+                        ADD TIMER TO TODO COMPONENT
+                                EDIT TIME PER TASK OPTION
+                                    CHECK PROGRESS EVERY SESSION
+                                            TRACK PROGRESS DAILY--UPDATE LOG BOOK
+                                                
+                                    add links to projects in progress component
+
+                }
+    -->
+<div class="timer__container">
+    <div class="timer__container--component" id="root__component">
+    <!-- <div class='timer'>
+         <span class="timer__part timer__part--minutes">00</span>
+        <span class="timer__part">:</span>
+        <span class="timer__part timer__part--seconds">00</span>
+        <button type="button" class="timer--btn timer__btn--control timer__btn--start">
+            <span class="material-icons">play_arrow</span>
+        </button>
+        <button type="button" class="timer--btn timer__btn--control timer__btn--reset">
+            <span class="material-icons">timer</span>
+        </button> 
+    </div> -->
+        <button type="button" class="add config" id="add">add</button>
+        <button type="button" class="clear config">clear</button>
+        <button type="button" class="set config">set</button>
+    </div>
+</div>
+
+<div class="control__panel" id="cp">
+
+    <div class="control__panel--controls">
+        <button type="button" class="hide">hide</button>
+        <button type="button" class="show">show</button>
+        <button type="button" class="settings">settings</button>
+        <button type="button" class="notes">notes</button>
+    </div>
+
+    <div class="cp--interface min">
+        <div class="cp--interface__component cp--interface__themes">
+            <span>Change Theme</span>
+            <button type="button" class="cp--theme__button minimal--btn">Minimal</button>
+            <button type="button" class="cp--theme__button modern--btn">Modern</button>
+            <button type="button" class="cp--theme__button glass--btn">Glass</button>
+            <button type="button" class="cp--theme__button gooey--btn">Gooey</button>
+        </div>
+        <div class="cp--interface__component cp--interface__progress">
+            <span>Show Progress</span>
+        </div>
+    </div>
+
+    <div class="note--interface">
+        <div class="cp--interface__component note__input">
+        <input class="note__title" type="text" name="title" id="note__title" placeholder="title">
+        <textarea class="note__body" name="body" id="note__body" placeholder="body"></textarea>
+        <button type="button" class="add__note">Add Note</button>
+        </div>
+        <div class="note__input--feedback cp--interface__component">
+
+        </div>
+    </div>
+</div>
+</body>
+<script src="stopwatch.js"></script>
+</html>

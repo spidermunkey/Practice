@@ -1,0 +1,222 @@
+    /*
+    ** google styles giving 50% 50% border 
+    << make it rotate alternate >>
+            padding: 1px 6px;
+    border-width: 2px;
+    ** border-style: outset;  
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+
+
+    Coloring
+Using the icon font allows for easy styling of an icon in any color. In accordance with material design icon guidelines, 
+
+** for active icons we recommend using either black at 54% opacity or white at 100% opacity when displaying these on light or dark backgrounds, respectively. 
+** If an icon is disabled or inactive, using black at 26% or white at 30% for light and dark backgrounds, respectively.
+
+Here are some examples, using the material CSS styles described above:
+
+
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+    */
+    body, html {
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+
+    body {
+        background: #ddd;
+        margin: 24px;
+    }
+
+
+
+    /* TIMER CONTAINER */
+
+    .timer__container {
+        position: absolute;
+        left: 0;
+        display: inline-flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: 100vh;
+        width: 50vw;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding: 1rem;
+    }
+
+    .timer__container--component {
+        margin: 5% 0;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-self: center;
+        width: 100%;
+        flex-wrap: nowrap;
+        height: 12%;
+
+        transition: all .2s ease;
+        transform-origin: left;
+    }
+
+
+
+
+
+
+/* TIMER COMPONENT */
+
+    .timer {
+        font-family: sans-serif;
+        display: inline-block;
+        padding: 24px 32px;
+        border-radius: 30px;
+        background: white;
+    }
+    
+    .timer__part {
+        font-size: 36px;
+        font-weight: bold;
+    }
+    
+    .timer--btn {
+        width: 50px;
+        height: 50px;
+        margin-left: 16px;
+        border-radius: 50%;
+        color: white;
+        background: #8208e6;
+        border: none;
+    }
+    
+    .timer__btn--start {
+        background: #00b84c;
+    }
+    
+    .timer__btn--stop {
+        background: #ff0256;
+    }
+    
+
+    .config {
+        margin: 1% 1%;
+        justify-self: center;
+        align-self: center;
+        height: 45%;
+        width: 10%;
+        border-radius: 30px;
+    }
+
+    
+
+
+/* CONTROL PANEL */ 
+
+    #cp {
+        display: inline-flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50vw;
+        height: 100vh;
+        background: slategray;
+        border: 1px solid grey;
+        z-index: 2;
+    }
+
+     .control__panel--controls {
+        position: relative;
+    }
+
+
+
+
+
+    /* SETTINGS */
+
+    .cp--interface {
+        box-sizing: border-box;
+        margin-top: 10%;
+        padding: 5%;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        transition: all .2s ease;
+        transform-origin: top;
+
+        transform: scale(0);
+    }
+ 
+    .cp--interface__component {
+
+        top: 15%;
+        left: 15%;
+        width: 55%;
+        height: 35%;
+        background: whitesmoke;
+    }
+
+  
+
+
+    /*  MINIMIZE / SHOW  */
+
+    .timer__container--component.min {
+        transform: scale(0);
+    }
+
+    .cp--interface.show {
+        transform: scale(1);
+    }
+
+    .note--interface.show {
+        transform: scale(1);
+    }
+
+    
+    /* THEMES */
+
+        .timer__container--component.minimal {
+            background: burlywood;
+            color: black
+        }
+        .timer__container--component.modern {
+            background: linear-gradient(transparent pink yellow);
+            color: blue
+        }
+        .timer__container--component.glass {
+            background: red;
+            color: red
+        }
+        .timer__container--component.gooey {
+            background: blue;
+            color: yellow;
+        }
+
+        
+    /* NOTES */
+
+    .note--interface {
+        transition: all .2s ease;
+        transform-origin: top left;
+        transform: scale(0);
+    }
+
+    .note__body {
+        height: 81.5%;
+        width: 97%;
+    }
+     
+
+    
+
+        
