@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,200&family=Shizuru&display=swap');
+
+html, body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.gradient {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.384);
+}
+.countdown--container {
+    position: absolute;
+    top: 40%;
+    color: whitesmoke;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    justify-content: center;
+}
+
+.countdown--text__container {
+    font-family: 'Shizuru', cursive;
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 5%;
+    z-index: 2;
+}
+
+.countdown--text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-style: italic;
+}
+
+
+.img-nye {
+    position: absolute;
+    height: 100vh;
+    width: 100vw; 
+    background-image: url("https://images.unsplash.com/photo-1605941407951-fa62495beb54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG5ldyUyMHllYXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=auto&q=auto"); 
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&family=Poppins:ital,wght@0,600;1,200&family=Shizuru&display=swap');
+
+html, body {
+    margin: 0;
+    overflow: hidden;
+}
+.wrapper {
+    position: absolute;
+    background-image: url("https://images.unsplash.com/photo-1429087969512-1e85aab2683d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJpcnRoZGF5JTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&auto=format&fit=cover&w=auto&q=auto");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 50vw;
+    z-index: -1;
+}
+
+.gradient {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(255, 255, 255, 0.258);
+    z-index: 1;
+}
+
+.countdown--container {
+    position: absolute;
+    height: 100vh;
+    width: 30vw;
+    left: 60%;
+    background: pink;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+ .countdown--text__container {
+     box-sizing: border-box;
+     position: relative;
+   
+     height: 100%;
+     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+ 
+}
+
+.countdown--text {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    object-fit: fill;
+    margin: 0 5%;
+    font-family: 'Moo Lah Lah', cursive;;
+}
+
+.number {
+    font-size: 8rem;
+}
+
+.text {
+    font-size: 3rem;
+}
+
