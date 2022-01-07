@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+
+<!-- Simple hover only nav -->
+<!-- Control 2hrs -->
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#1</title>
+    <style>
+        html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+/* 
+.section {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+} */
+
+
+.navigation {
+    position: absolute;
+    left: 28%;
+    width: 45%;
+    height: 13%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
+    font-weight: lighter;
+    letter-spacing: .3ch;
+    z-index: 3;
+}
+
+nav {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    height: 50vh;
+    position: absolute;
+    bottom: -180%;
+    z-index: 3;
+    color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    pointer-events: none;
+    list-style: none;
+    z-index: 1;
+
+}
+
+nav ul li:hover {
+    transition: all .2s ease;
+    color: black;
+}
+
+nav ul li {
+    margin: 8%;
+}
+
+.settings--menu {
+    opacity: 0;
+    bottom: -200%;
+    transition: all .33s ease-in;
+}
+
+.profile--menu {
+    opacity: 0;
+    bottom: -143%;
+    transition: all .33s ease-in;
+}
+
+.navigation--menu {
+    opacity: 0;
+    bottom: -300%;
+    transition: all .33s ease-in;
+}
+
+nav ul.showNav {
+    opacity: 1;
+    transform: translateY(20%);
+    pointer-events: all;
+}
+
+/* .overlay {
+    position: absolute;
+    top: -20%;
+    left: -5%;
+    height: 300%;
+    width: 120%;
+    background: transparent;
+    opacity: .5;
+} */
+
+.tm--container {
+    display: none;
+}
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <!-- Profile Menu -->
+        <nav>
+            <span class="nav">Profile</span>
+            <ul id="profile" class="profile--menu">
+                <li>Account Overview</li>
+                <li>Profile Preferences</li>
+                <li>Sign Out</li>
+            </ul>
+        </nav>
+        <!-- Navigation Menu -->
+        <nav>
+            <span class="nav">Menu</span>
+            <ul class="navigation--menu">
+                <li>Message Center</li>
+                <li>Planner</li>
+                <li>TaskManager</li>
+                <li>Dashboard</li> <!--logo-->
+                <li>Blog</li>
+                <li>Notes</li>
+                <li>Calendar</li>
+            </ul>
+        </nav>
+        <!-- Settings Menu -->
+        <nav>
+            <span class="nav">Settings</span>
+            <ul class="settings--menu">
+                <li>Themes</li><!-- Dark/Light - Minimalist - Modern - Gooey - Glass -->
+                <li>Styles</li> <!-- Fonts - Accents - Icons -->
+                <li>Sounds</li> <!-- Music -- Fx -->
+                <li>Animations</li> <!--slider less animated - more animated -->
+                <li>Language</li> <!-- en - fr - sp -->
+                <li>Accessibility</li> 
+            </ul>
+        </nav>
+    </div>
+
+    
+    <div class="tm--container" id='app'>
+
+        <div class="tm--interface">
+
+            <div class="tm--tasklist__daily">
+                <div class="tasklist__daily-container">
+                    <span class="daily-task"></span>
+                    <button type="button" role="article" class='add-note'></button>
+                    <button type='button' role="alert" class='timer-alias'></button>
+                    <button type='button' role='submit--task' class='btn--check'></button>
+                </div>
+                <div class="tasklist__daily-container">
+                    <span class="daily-task"></span>
+                    <button type="button" role="article" class='add-note'></button>
+                    <button type='button' role="alert" class='timer-alias'></button>
+                    <button type='button' role='submit--task' class='btn--check'></button>
+                </div>
+                <div class="tasklist__daily-container">
+                    <span class="daily-task"></span>
+                    <button type="button" role="article" class='add-note'></button>
+                    <button type='button' role="alert" class='timer-alias'></button>
+                    <button type='button' role='submit--task' class='btn--check'></button>
+                </div>
+            </div>
+
+
+            <div class="tm--tasklist__weekly">
+                <span class="weekly-task">
+
+                    <button class="green-on-complete"></button>
+                </span>
+                <span class="weekly-task">
+
+                    <button class="green-on-complete"></button>
+                </span>
+                <span class="weekly-task">
+
+                    <button class="green-on-complete"></button>
+                </span>
+            </div>
+
+
+            <div class="tm--tasklist__monthly">
+                <p class='monthly-message'>
+
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    document.querySelectorAll('.navigation nav span').forEach(item => item.addEventListener("mouseenter", () => {
+        console.log(item.nextElementSibling);
+    
+        removeAllClasses();
+    
+        item.nextElementSibling.classList.add('showNav');
+    
+        document.querySelector('body').addEventListener("mouseenter", () => {
+            removeAllClasses();
+        })
+    
+    
+        // const overlay = item.nextElementSibling.firstChild;
+        // overlay.classList.toggle('.open');
+        // overlay.addEventListener('mouseout', removeMenuClass);
+    }));
+    
+    document.querySelectorAll('.navigation nav span').forEach(item => item.nextElementSibling.addEventListener("mouseleave", () => {
+        removeAllClasses();
+    }));
+    
+    
+    function removeAllClasses() {
+        document.querySelectorAll('.navigation nav span').forEach(item => item.nextElementSibling.classList.remove('showNav'));
+        document.body.removeEventListener("mouseenter", removeAllClasses);
+    }
+    // NAV
+    // IF MOUSE OVER ELEMENT NAV HEADER REMOVE CLASS FROM ALL OTHER ELEMENTS
+    // IF MOUSE OVER ELEMENT ADD OVERLAY AREA OF MENU... IF MOUSE OUT OF RECTANGLE REMOVE CLASSES
+    // IF MENU IS TRIGGERED SET MENU ACTIVE FOR THAT ELEMENT
+    // IF MENU IS ACTIVE ADD EVENT LISTENER TO BODY.. IF MOUSE ENTERS BODY.. DEACTIVATE MENU
+</script>
+</html>
